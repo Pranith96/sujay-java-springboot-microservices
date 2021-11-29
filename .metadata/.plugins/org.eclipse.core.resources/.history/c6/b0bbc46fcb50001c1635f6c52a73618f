@@ -1,0 +1,8 @@
+package com.map;
+
+public class MapExample {
+
+	public static void main(String[] args) {
+		
+	}
+}

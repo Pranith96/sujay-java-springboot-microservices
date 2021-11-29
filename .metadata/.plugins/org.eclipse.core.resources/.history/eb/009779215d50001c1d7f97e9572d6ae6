@@ -1,0 +1,12 @@
+package com.predicate;
+
+import java.util.function.Predicate;
+
+public class Hello implements Predicate<Integer>{
+
+	@Override
+	public boolean test(Integer t) {
+		return false;
+	}
+
+}

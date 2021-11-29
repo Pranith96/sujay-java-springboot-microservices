@@ -1,0 +1,13 @@
+public class MainMethod {
+
+	public static void main(String[] args) {
+
+		AdditionalImpl additionalImpl = new AdditionalImpl();
+		additionalImpl.add();
+		
+		Addition additional = new AdditionalImpl();
+		additional.add();
+		
+	}
+
+}
