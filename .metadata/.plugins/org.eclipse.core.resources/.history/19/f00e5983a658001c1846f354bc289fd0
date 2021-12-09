@@ -1,0 +1,6 @@
+package com.employee.controller;
+
+@RestController
+public class EmployeeController {
+
+}
