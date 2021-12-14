@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="java.util.function.Predicate"/>
     <fullyQualifiedTypeName name="java.util.function.Consumer"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
@@ -22,4 +21,6 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
 </qualifiedTypeNameHistroy>

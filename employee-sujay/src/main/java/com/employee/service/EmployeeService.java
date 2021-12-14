@@ -14,4 +14,10 @@ public interface EmployeeService {
 
 	List<Employee> getEmployeeByName(String employeeName);
 
+	String updateEmployee(Employee employee);
+
+	String deleteEmployeeById(Integer employeeId);
+
+	String updateEmployeeMobileNumber(Integer employeeId, String mobileNumber);
+
 }
