@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.employee.entity.Employee;
 import com.employee.exception.EmployeeNoContentException;
 import com.employee.exception.EmployeeNotFoundException;
+import com.employee.exception.EmployeeNotFoundException2;
 import com.employee.repository.EmployeeRepository;
 
 @Service
@@ -42,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee getEmployeeById(Integer employeeId) {
 		Optional<Employee> employeeResponse = employeeRepository.findById(employeeId);
 		if (!employeeResponse.isPresent()) {
-			throw new EmployeeNotFoundException("Employee Id Not Found");
+			throw new EmployeeNotFoundException2("Employee Id Not Found");
 		}
 		return employeeResponse.get();
 	}
