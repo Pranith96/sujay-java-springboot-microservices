@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.employee.entity.Employee;
@@ -16,6 +17,7 @@ import com.employee.repository.EmployeeRepository;
 
 @Service
 @Transactional
+@Profile(value= {"prod","dev","qa"})
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
