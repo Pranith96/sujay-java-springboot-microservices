@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @Configuration
-@Profile(value = {"prod","qa"})
+@Profile(value = {"local","dev","prod","qa"})
 public class SwaggerConfig {
 
     @Bean

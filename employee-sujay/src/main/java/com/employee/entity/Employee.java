@@ -1,10 +1,14 @@
 package com.employee.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import io.swagger.annotations.ApiModel;
@@ -35,6 +39,23 @@ public class Employee {
 	@Column(name = "Password")
 	@ApiModelProperty(notes = "password")
 	private String password;
+
+	// fetch=FetchType.LAZY or FetchType.EAGER
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "address_id")
+	private Address adress;
+
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Company.class)
+	@JoinColumn(name = "company_id")
+	private Company company;
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -84,6 +105,14 @@ public class Employee {
 		this.password = password;
 	}
 
+	public Address getAdress() {
+		return adress;
+	}
+
+	public void setAdress(Address adress) {
+		this.adress = adress;
+	}
+
 	public Employee(Integer employeeId, String employeeName, String mobileNumber, String emailId, String loginId,
 			String password) {
 		this.employeeId = employeeId;
@@ -100,7 +129,8 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", mobileNumber="
-				+ mobileNumber + ", emailId=" + emailId + ", loginId=" + loginId + ", password=" + password + "]";
+				+ mobileNumber + ", emailId=" + emailId + ", loginId=" + loginId + ", password=" + password
+				+ ", adress=" + adress + "]";
 	}
 
 }

@@ -17,7 +17,7 @@ import com.employee.repository.EmployeeRepository;
 
 @Service
 @Transactional
-@Profile(value= {"prod","dev","qa"})
+@Profile(value = {"local","dev","prod","qa"})
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
@@ -25,6 +25,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public String addEmployee(Employee employee) {
+		employee.getAdress().setEmployee(employee);
 		Employee employeeResponse = employeeRepository.save(employee);
 		if (employeeResponse == null) {
 			return "Employee details not saved";
