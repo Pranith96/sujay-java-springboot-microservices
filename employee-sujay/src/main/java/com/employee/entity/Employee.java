@@ -1,5 +1,7 @@
 package com.employee.entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -48,6 +52,19 @@ public class Employee {
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Company.class)
 	@JoinColumn(name = "company_id")
 	private Company company;
+
+	@ManyToMany(cascade = CascadeType.ALL, targetEntity = Projects.class)
+	@JoinTable(name = "employee_project", joinColumns = { @JoinColumn(name = "employeeId") }, inverseJoinColumns = {
+			@JoinColumn(name = "projectId") })
+	private List<Projects> projects;
+
+	public List<Projects> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Projects> projects) {
+		this.projects = projects;
+	}
 
 	public Company getCompany() {
 		return company;
